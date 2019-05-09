@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ananya"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:orientation="vertical"
+    >
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:orientation="horizontal"
+
+       android:background="@color/tittleBackground">
+
+       <Button
+           android:id="@+id/home"
+           style="@style/Widget.AppCompat.Button.Borderless"
+           android:layout_height="50dp"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:textSize="12sp"
+           android:textColor="@color/fontwhite"
+           android:text="Home" />
+
+       <Button
+           android:id="@+id/magazine"
+           style="@style/Widget.AppCompat.Button.Borderless"
+           android:layout_height="50dp"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:textSize="12sp"
+           android:textColor="@color/fontwhite"
+           android:text="Magazine" />
+
+       <Button
+           android:id="@+id/share"
+           style="@style/Widget.AppCompat.Button.Borderless"
+           android:layout_height="50dp"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:textSize="12sp"
+           android:textColor="@color/fontwhite"
+           android:text="Share" />
+
+       <Button
+           android:id="@+id/feedback"
+           style="@style/Widget.AppCompat.Button.Borderless"
+           android:layout_height="50dp"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:textSize="12sp"
+           android:textColor="@color/fontwhite"
+           android:text="Feedback" />
+
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+</LinearLayout>

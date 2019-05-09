@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ananya"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+
+            android:background="@color/tittleBackground">
+
+            <Button
+                android:id="@+id/homeHomeScreen"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="@color/fontwhite"
+                android:text="Home" />
+
+            <Button
+                android:id="@+id/magazineHomeScreen"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="@color/fontwhite"
+                android:text="Magazine" />
+
+            <Button
+                android:id="@+id/shareHomeScreen"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="@color/fontwhite"
+                android:text="Share" />
+
+            <Button
+                android:id="@+id/feedbackHomeScreen"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="@color/fontwhite"
+                android:text="Feedback" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/pdfOpener"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical">
+
+            </com.github.barteksc.pdfviewer.PDFView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--<include layout="@layout/content_main" />-->
+
+</LinearLayout>
