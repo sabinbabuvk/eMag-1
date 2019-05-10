@@ -42,7 +42,7 @@ public class PDFAdapter extends ArrayAdapter<File> {
             view = LayoutInflater.from(getContext()).inflate(R.layout.activity_pdfadapter, parent, false);
             viewHolder = new ViewHolder();
             viewHolder.tv_filename = (TextView) view.findViewById(R.id.tv_name);
-            Log.e("Rest id adapter success",this.toString());
+            Log.e("FLAG",this.toString());
             view.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) view.getTag();

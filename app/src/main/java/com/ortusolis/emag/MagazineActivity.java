@@ -93,7 +93,7 @@ public class MagazineActivity extends Activity {
     private void init() {
         lv_pdf = (ListView) findViewById(R.id.lv_pdf);
         dir = new File(Environment.getExternalStorageDirectory() + "/Android/data/com.ortusolis.emag/files/Ananya_pdf_files/");
-        Log.e("dir",   dir.toString());
+        Log.e("FLAG",   dir.toString());
         fn_permission();
         lv_pdf.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -102,7 +102,7 @@ public class MagazineActivity extends Activity {
                 intent.putExtra("position", i);
                 startActivity(intent);
 
-                Log.e("Position", i + "");
+                Log.e("FLAG", i + "");
             }
         });
     }
@@ -119,7 +119,7 @@ public class MagazineActivity extends Activity {
                 } else {
 
                     boolean booleanpdf = false;
-                   // if (listFile[i].getName().endsWith("Magazine.pdf")) {
+                   if (listFile[i].getName().endsWith(".pdf")) {
 
                         for (int j = 0; j < fileList.size(); j++) {
                             if (fileList.get(j).getName().equals(listFile[i].getName())) {
@@ -134,7 +134,7 @@ public class MagazineActivity extends Activity {
                         } else {
                             fileList.add(listFile[i]);
                         }
-                   // }
+                   }
                 }
             }
         }
@@ -199,7 +199,7 @@ public class MagazineActivity extends Activity {
                 while (rs.next()) {
                     String fileUrl = rs.getString(7);
                     String filename = rs.getString(6);
-                    Log.e("Result set", fileUrl);
+                    Log.e("FLAG", fileUrl);
                     File file = new File(Environment.getExternalStorageDirectory()+"/Android/data/com.ortusolis.emag/files/Ananya_pdf_files/"+filename);
 
 
@@ -207,7 +207,7 @@ public class MagazineActivity extends Activity {
                         Toast.makeText(getApplicationContext(),
                         " Magazine is Ready",
                         Toast.LENGTH_SHORT).show();
-                        Log.e("Result file exist ", file.toString());
+                        Log.e("FLAG", file.toString());
                     }
                     else {
                         Toast.makeText(getApplicationContext(),
@@ -228,7 +228,7 @@ public class MagazineActivity extends Activity {
             } finally {
                 rs.close();
             }
-            Log.e("Result set", rs.toString());
+            Log.e("FLAG", rs.toString());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

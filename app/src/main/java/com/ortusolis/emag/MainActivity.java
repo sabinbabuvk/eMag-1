@@ -48,7 +48,7 @@ import java.util.List;
 
 //import static com.ortusolis.emag.MagazineActivity.fileList;
 
-public class MainActivity extends AppCompatActivity implements OnPageChangeListener, OnLoadCompleteListener {
+public class MainActivity extends AppCompatActivity {
     ListView mylistView;
     PDFView mypdfView;
     DownloadManager downloadManager;
@@ -174,30 +174,30 @@ public class MainActivity extends AppCompatActivity implements OnPageChangeListe
             }
         }
     }
+//
+//    @Override
+//    public void onPageChanged(int page, int pageCount) {
+//        pageNumber = page;
+//        setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
+//    }
 
-    @Override
-    public void onPageChanged(int page, int pageCount) {
-        pageNumber = page;
-        setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-    }
+//    @Override
+//    public void loadComplete(int nbPages) {
+//        PdfDocument.Meta meta = mypdfView.getDocumentMeta();
+//        printBookmarksTree(mypdfView.getTableOfContents(), "-");
+//
+//    }
 
-    @Override
-    public void loadComplete(int nbPages) {
-        PdfDocument.Meta meta = mypdfView.getDocumentMeta();
-        printBookmarksTree(mypdfView.getTableOfContents(), "-");
-
-    }
-
-    public void printBookmarksTree(List<PdfDocument.Bookmark> tree, String sep) {
-        for (PdfDocument.Bookmark b : tree) {
-
-            Log.e("MainActivity", String.format("%s %s, p %d", sep, b.getTitle(), b.getPageIdx()));
-
-            if (b.hasChildren()) {
-                printBookmarksTree(b.getChildren(), sep + "-");
-            }
-        }
-    }
+//    public void printBookmarksTree(List<PdfDocument.Bookmark> tree, String sep) {
+//        for (PdfDocument.Bookmark b : tree) {
+//
+//            Log.e("MainActivity", String.format("%s %s, p %d", sep, b.getTitle(), b.getPageIdx()));
+//
+//            if (b.hasChildren()) {
+//                printBookmarksTree(b.getChildren(), sep + "-");
+//            }
+//        }
+//    }
 
     protected Boolean doInBackground() {
         boolean flag = true;
@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements OnPageChangeListe
                 while (rs.next()) {
                     String fileUrl = rs.getString(7);
                     String filename = rs.getString(6);
-                    Log.e("Result set", fileUrl);
+                    Log.e("FLAG", fileUrl);
                     File file = new File(Environment.getExternalStorageDirectory() + "/Android/data/com.ortusolis.emag/files/Ananya_pdf_files/" + filename);
                     if (file != null && file.exists()) {
                         fn_permission();
@@ -237,16 +237,16 @@ public class MainActivity extends AppCompatActivity implements OnPageChangeListe
                                 .enableSwipe(true)
 
                                 .swipeHorizontal(true)
-                                .onPageChange(this)
+                               // .onPageChange(this)
                                 .enableAnnotationRendering(true)
-                                .onLoad(this)
+                              //  .onLoad(this)
                                 .scrollHandle(new DefaultScrollHandle(this))
                                 .load();
                         mypdfView.useBestQuality(true);
                         Toast.makeText(getApplicationContext(),
                                 " Magazine is Ready",
                                 Toast.LENGTH_SHORT).show();
-                        Log.e("Result file exist ", file.toString());
+                        Log.e("FLAG", file.toString());
                     } else {
                         doInBackground1(file, fileUrl, filename);
 
@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity implements OnPageChangeListe
             } finally {
                 rs.close();
             }
-            Log.e("Result set", rs.toString());
+            Log.e("FLAG", rs.toString());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -270,6 +270,7 @@ public class MainActivity extends AppCompatActivity implements OnPageChangeListe
         try{
             DownloadManager mManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
             downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+            Log.i ("FLAG","http://13.233.81.45/"+fileUrl);
           //  http://13.233.81.45/uploadPDF/Kalasinchana%20April%202019%20with%20cover%20pagesMagazine.pdf
             Uri uri = Uri.parse("http://13.233.81.45/"+fileUrl);
            // Uri uri = Uri.parse("http://13.233.81.45/" + fileUrl);
@@ -303,9 +304,9 @@ public class MainActivity extends AppCompatActivity implements OnPageChangeListe
                                                 .enableSwipe(true)
 
                                                 .swipeHorizontal(true)
-                                                .onPageChange(this)
+                                               // .onPageChange(this)
                                                 .enableAnnotationRendering(true)
-                                                .onLoad(this)
+                                              //  .onLoad(this)
                                                 .scrollHandle(new DefaultScrollHandle(this))
                                                 .load();
                                         mypdfView.useBestQuality(true);

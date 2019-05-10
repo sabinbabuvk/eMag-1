@@ -31,7 +31,7 @@
         android:background="@color/tittleBackground">
 
         <Button
-            android:id="@+id/home"
+            android:id="@+id/homeShare"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -39,7 +39,7 @@
             android:text="Home" />
 
         <Button
-            android:id="@+id/magazine"
+            android:id="@+id/magazineShare"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -47,7 +47,7 @@
             android:text="Magazine" />
 
         <Button
-            android:id="@+id/share"
+            android:id="@+id/shareShare"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -55,7 +55,7 @@
             android:text="Share" />
 
         <Button
-            android:id="@+id/feedback"
+            android:id="@+id/feedbackShare"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_height="50dp"
             android:layout_weight="1"

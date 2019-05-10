@@ -91,13 +91,13 @@ public class LoginPage extends AppCompatActivity {
             Statement st = conn.createStatement();
              ResultSet rs = st.executeQuery("SELECT EmailId FROM subscribers_details where EmailId='"+emailid+"'");
             if(rs.next()){
-                Log.e("Rest next success",rs.getString(1));
+                Log.e("FLAG",rs.getString(1));
                 Toast.makeText(getApplicationContext(),"Offical member "+emailid+"", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginPage.this, MainActivity.class);
                 startActivity(intent);
             }
             else {
-                Log.e("Rest success", emailid.toString());
+                Log.e("FLAG", emailid.toString());
                 st.executeUpdate("INSERT INTO subscribers_details (SubType,SubTitle,FirstName,MiddleName,LastName,EmailId,PhoneNum1,PhoneNum2,Address,State,City,PinCode,Password,SubStartDate,SubEndDate) VALUES ('','','','','','" + emailid + "','3256898745','2132564587','','','','235689','','0000-00-00','0000-00-00');");
                 Intent intent = new Intent(LoginPage.this, MainActivity.class);
                 startActivity(intent);

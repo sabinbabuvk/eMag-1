@@ -16,7 +16,7 @@ import com.shockwave.pdfium.PdfDocument;
 
 import java.util.List;
 
-public class Magazine2Activity extends AppCompatActivity implements OnPageChangeListener, OnLoadCompleteListener {
+public class Magazine2Activity extends AppCompatActivity  {
     private Button Home;
     private Button Magazine;
     private Button Share;
@@ -77,37 +77,37 @@ public class Magazine2Activity extends AppCompatActivity implements OnPageChange
                 .enableSwipe(true)
 
                 .swipeHorizontal(true)
-                .onPageChange(this)
+               // .onPageChange(this)
                 .enableAnnotationRendering(true)
-                .onLoad(this)
+               // .onLoad(this)
                 .scrollHandle(new DefaultScrollHandle(this))
                 .load();
         pdfView.useBestQuality(true);
     }
-    @Override
-    public void onPageChanged(int page, int pageCount) {
-        pageNumber = page;
-        setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-    }
-    @Override
-    public void loadComplete(int nbPages) {
-        PdfDocument.Meta meta = pdfView.getDocumentMeta();
-        printBookmarksTree(pdfView.getTableOfContents(), "-");
-
-    }
+//    @Override
+//    public void onPageChanged(int page, int pageCount) {
+//        pageNumber = page;
+//        setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
+//    }
+//    @Override
+//    public void loadComplete(int nbPages) {
+//        PdfDocument.Meta meta = pdfView.getDocumentMeta();
+//        printBookmarksTree(pdfView.getTableOfContents(), "-");
+//
+//    }
 
     public String linkuse(){
         return pdfFileName;
     }
 
-    public void printBookmarksTree(List<PdfDocument.Bookmark> tree, String sep) {
-        for (PdfDocument.Bookmark b : tree) {
-
-            Log.e(TAG, String.format("%s %s, p %d", sep, b.getTitle(), b.getPageIdx()));
-
-            if (b.hasChildren()) {
-                printBookmarksTree(b.getChildren(), sep + "-");
-            }
-        }
-    }
+//    public void printBookmarksTree(List<PdfDocument.Bookmark> tree, String sep) {
+//        for (PdfDocument.Bookmark b : tree) {
+//
+//            Log.e(TAG, String.format("%s %s, p %d", sep, b.getTitle(), b.getPageIdx()));
+//
+//            if (b.hasChildren()) {
+//                printBookmarksTree(b.getChildren(), sep + "-");
+//            }
+//        }
+//    }
 }
