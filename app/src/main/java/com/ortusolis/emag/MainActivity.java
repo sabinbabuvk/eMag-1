@@ -6,12 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -25,26 +24,15 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.PDFView;
-import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
-import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
-import com.shockwave.pdfium.PdfDocument;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 
 //import static com.ortusolis.emag.MagazineActivity.fileList;
 
@@ -76,7 +64,14 @@ public class MainActivity extends AppCompatActivity {
         dir = new File(Environment.getExternalStorageDirectory().getAbsolutePath());
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+//        toolbar.setTitleTextColor(Color.RED);
+//        toolbar.setLogo(R.drawable.ananya1);
+//        toolbar.setContentInsetsAbsolute(0,1);
+      //  toolbar
         setSupportActionBar(toolbar);
+      //  toolbar.setTitle("My_title");
+
+
         mypdfView = findViewById(R.id.pdfOpener);
 
         Magazine = findViewById(R.id.magazineHomeScreen);
@@ -256,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
             } finally {
                 rs.close();
             }
-            Log.e("FLAG", rs.toString());
+            Log.e("Result set", rs.toString());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

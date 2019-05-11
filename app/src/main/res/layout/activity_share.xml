@@ -36,6 +36,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:textColor="@color/colorPrimary"
             android:text="Home" />
 
         <Button
@@ -44,6 +45,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:textColor="@color/colorPrimary"
             android:text="Magazine" />
 
         <Button
@@ -52,6 +54,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:textColor="@color/colorPrimary"
             android:text="Share" />
 
         <Button
@@ -60,6 +63,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:textColor="@color/colorPrimary"
             android:text="Feedback" />
 
     </LinearLayout>

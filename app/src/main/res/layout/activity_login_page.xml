@@ -4,9 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ananya"
+    android:background="@drawable/ananya12"
     android:orientation="vertical"
     tools:context=".LoginPage">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#FFFFFF"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+    </android.support.design.widget.AppBarLayout>
 
 
     <LinearLayout
@@ -20,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="ಅನನ್ಯಾ"
+            android:text="ಅನನ್ಯ"
             android:textColor="@android:color/black"
             android:textSize="35dp" />
 
@@ -29,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:text="ಕಲಾಸಿಂಕಾನಾ, ಇಡ್ಡು ಕಲಾವಿದ ಪ್ರಣಚಾ"
+            android:text="ಕಲಾಸಿoಚನ, ಇದು ಕಲೆ ಮತ್ತು ಕಲಾವಿದರ ಪ್ರಪಂಚ"
             android:textColor="@android:color/black"
             android:textSize="17.5dp" />
     </LinearLayout>

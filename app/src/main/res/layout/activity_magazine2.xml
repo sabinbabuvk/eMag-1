@@ -31,36 +31,40 @@
         android:background="@color/tittleBackground">
 
         <Button
-            android:id="@+id/homeShare"
+            android:id="@+id/home"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:textSize="12sp"
+            android:textColor="@color/colorPrimary"
             android:text="Home" />
 
         <Button
-            android:id="@+id/magazineShare"
+            android:id="@+id/magazine"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:textColor="@color/colorPrimary"
             android:text="Magazine" />
 
         <Button
-            android:id="@+id/shareShare"
+            android:id="@+id/share"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:textColor="@color/colorPrimary"
             android:text="Share" />
 
         <Button
-            android:id="@+id/feedbackShare"
+            android:id="@+id/feedback"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:textColor="@color/colorPrimary"
             android:text="Feedback" />
 
     </LinearLayout>

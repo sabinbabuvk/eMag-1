@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +24,6 @@ public class LoginPage extends AppCompatActivity {
     private Button Login;
     private EditText emailid;
     private EditText password;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +33,7 @@ public class LoginPage extends AppCompatActivity {
         Login.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//
                 String getText=emailid.getText().toString();
                 String Expn =
 
@@ -75,6 +76,7 @@ public class LoginPage extends AppCompatActivity {
 
 
         }));
+
     }
 
     public void LoginOn(String emailid){
